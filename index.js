@@ -1,8 +1,3 @@
-//express
-
-//homeroute, vt route, res route
-//port 3000
-
 var express = require("express");
 var path = require("path");
 
@@ -18,8 +13,6 @@ var reservations = {
     email: [],
     id: []
 };
-
-
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, 'template', "index.html"));
@@ -55,15 +48,17 @@ app.get("/api/reservations/:reservation", function (req, res) {
 
 
 //creates new reservation
-app.get("/api/reservations", function (req, res) {
+app.post("/api/reservations", function (req, res) {
+
+    console.log('post request');
 
     var newReservation = req.body;
 
     console.log(newReservation);
 
-    reservations.push(newReservation);
+    // reservations.push(newReservation);
 
-    res.json(newReservation);
+    // res.json(newReservation);
 });
 
 app.listen(PORT, function () {
