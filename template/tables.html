@@ -26,24 +26,13 @@
 
         <!-- Table List -->
         <section>
-            <h2>Table 1</h2>
-            <h4>TABLE CAPACITY</h4>
-            <ol>
-                <li>12pm: <span id='name'></span></li>
-                <li>1pm: <span id='name'></span></li>
-                <li>2pm: <span id='name'></span></li>
-                <li>3pm: <span id='name'></span></li>
-                <li>4pm: <span id='name'></span></li>
-                <li>5pm: <span id='name'></span></li>
-                <li>6pm: <span id='name'></span></li>
-                <li>7pm: <span id='name'></span></li>
-                <li>8pm: <span id='name'></span></li>
-                <li>9pm: <span id='name'></span></li>
-                <li>10pm: <span id='name'></span></li>
-                <li>11pm: <span id='name'></span></li>
-            </ol>
+            <h2>Table #<span id='tablenum'></span></h2>
+            <p>Reservation id: <span id='id'></span></p>
+            <p>Name: <span id='name'></span></p>
+            <p>Email: <span id='email'></span></p>
+            <p>Phone Number: <span id='phone'></span></p>
         </section>
-        <section>
+        <!-- <section>
             <h2>Table 2</h2>
             <h4>TABLE CAPACITY</h4>
             <ol>
@@ -96,7 +85,27 @@
                 <li>10pm: <span id='name'></span></li>
                 <li>11pm: <span id='name'></span></li>
             </ol>
-        </section>
+        </section> -->
+
+        <script src="http://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+        <script type='text/javascript'>
+            window.onload = function () {
+                $.get('/api/reservations',).then((data) => {
+                    appendData(data);
+                })
+
+                function appendData(data) {
+                    console.log('Append Data');
+                    $('#tablenum').text(data[0].tablenum);
+                    $('#id').text(data[0].id);
+                    $('#name').text(data[0].name);
+                    $('#email').text(data[0].email);
+                    $('#phone').text(data[0].phone);
+                }
+            }
+        </script>
     </body>
 
 </html>

@@ -90,14 +90,13 @@
                 data = {
                     tablenum: tableNumber,
                     name: name,
-                    time: time,
-                    phonenum: phoneNumber,
+                    phone: phoneNumber,
                     email: email,
                     id: id
                 }
 
+                // Sends post request to api
                 $.post('/api/reservations', data).then((data) => {
-                    alert('It Worked');
                     console.log(data);
                 });
             }

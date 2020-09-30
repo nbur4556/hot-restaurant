@@ -7,12 +7,7 @@ var PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var reservations = {
-    name: [],
-    phone: [],
-    email: [],
-    id: []
-};
+var reservations = [];
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname, 'template', "index.html"));
@@ -49,16 +44,11 @@ app.get("/api/reservations/:reservation", function (req, res) {
 
 //creates new reservation
 app.post("/api/reservations", function (req, res) {
-
-    console.log('post request');
-
     var newReservation = req.body;
 
-    console.log(newReservation);
+    reservations.push(newReservation);
 
-    // reservations.push(newReservation);
-
-    // res.json(newReservation);
+    res.json(newReservation);
 });
 
 app.listen(PORT, function () {
