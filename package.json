@@ -1,0 +1,19 @@
+{
+  "name": "hot-restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nbur4556/hot-restaurant.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nbur4556/hot-restaurant/issues"
+  },
+  "homepage": "https://github.com/nbur4556/hot-restaurant#readme"
+}
