@@ -22,15 +22,15 @@ var reservations = {
 
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, 'template', "index.html"));
 });
 
 app.get("/reserve", function (req, res) {
-    res.sendFile(path.join(__dirname, "reservations.html"));
+    res.sendFile(path.join(__dirname, 'template', "reservations.html"));
 });
 
 app.get("/tables", function (req, res) {
-    res.sendFile(path.join(__dirname, "tables.html"));
+    res.sendFile(path.join(__dirname, 'template', "tables.html"));
 });
 
 // displays all reservations to page
